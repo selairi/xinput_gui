@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <!-- interface-requires gtk+ 3.0 -->
+  <object class="GtkAction" id="add_action">
+    <property name="stock_id">gtk-add</property>
+    <signal name="activate" handler="add_callback" swapped="no"/>
+  </object>
+  <object class="GtkAction" id="apply_action">
+    <property name="stock_id">gtk-yes</property>
+    <signal name="activate" handler="apply_callback" swapped="no"/>
+  </object>
+  <object class="GtkAction" id="reload_action">
+    <property name="stock_id">gtk-refresh</property>
+    <signal name="activate" handler="reload_callback" swapped="no"/>
+  </object>
+  <object class="GtkAction" id="remove_action">
+    <property name="stock_id">gtk-remove</property>
+    <signal name="activate" handler="remove_callback" swapped="no"/>
+  </object>
+  <object class="GtkWindow" id="window">
+    <property name="width_request">440</property>
+    <property name="height_request">500</property>
+    <property name="can_focus">False</property>
+    <property name="title" translatable="yes">Xinput</property>
+    <property name="default_width">440</property>
+    <property name="default_height">250</property>
+    <property name="has_resize_grip">False</property>
+    <signal name="delete-event" handler="delete_callback" swapped="no"/>
+    <child>
+      <object class="GtkBox" id="box1">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkBox" id="box2">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="GtkToolbar" id="toolbar1">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <child>
+                  <object class="GtkToolButton" id="toolbutton1">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="related_action">reload_action</property>
+                    <property name="label" translatable="yes">toolbutton1</property>
+                    <property name="use_underline">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="homogeneous">True</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkToolButton" id="toolbutton2">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="related_action">add_action</property>
+                    <property name="label" translatable="yes">toolbutton2</property>
+                    <property name="use_underline">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="homogeneous">True</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkToolButton" id="toolbutton3">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="related_action">remove_action</property>
+                    <property name="label" translatable="yes">toolbutton3</property>
+                    <property name="use_underline">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="homogeneous">True</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkToolButton" id="toolbutton4">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="related_action">apply_action</property>
+                    <property name="label" translatable="yes">toolbutton4</property>
+                    <property name="use_underline">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="homogeneous">True</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkScrolledWindow" id="scrolledwindow1">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="shadow_type">in</property>
+                <child>
+                  <object class="GtkTreeView" id="treeview">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="reorderable">True</property>
+                    <child internal-child="selection">
+                      <object class="GtkTreeSelection" id="treeview-selection1"/>
+                    </child>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
